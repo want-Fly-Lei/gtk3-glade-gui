@@ -8,7 +8,7 @@
     <property name="window-position">center</property>
     <property name="default-width">1200</property>
     <property name="default-height">800</property>
-    <property name="icon">..\img\emo.ico</property>
+    <property name="icon">../img/emo.ico</property>
     <child>
       <!-- n-columns=24 n-rows=12 -->
       <object class="GtkGrid" id="grid">
