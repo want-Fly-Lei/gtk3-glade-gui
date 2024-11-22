@@ -14,4 +14,4 @@ gcc -Wall test.c -o test.exe `pkg-config gtk+-3.0 --cflags --libs`
 ```
 pkg-config gtk+-3.0 --cflags --libs
 ```
-然后稍作修改后加入进去即可之后编写代码就有提示了，如果想要vscode运行需要添加-l这种才行（比如在Liunx编写c语言引用了math.h就需要加-lm），本人学艺不精。
+然后稍作修改后加入进去即可之后编写代码就有提示了，如果想要vscode运行需要添加-l这种才行（比如在Linux编写c语言引用了math.h就需要加-lm），本人学艺不精。

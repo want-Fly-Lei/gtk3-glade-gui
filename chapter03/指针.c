@@ -1,16 +1,18 @@
-#include<stdio.h>
+#include <stdio.h>
+
 int main() {
     int i;
-    //´´½¨Ö¸ÕëÖ¸Ïòi
-    int * adder = &i;
-    //²é¿´ÊÇ·ñÖ¸ÏòµØÖ·
-    printf("iµÄµØÖ·ÊÇ£º%p\n",&i);
-    printf("adderµÄÖµÊÇ£º%p\n",adder);
-    //Ê¹ÓÃÖ¸Õë,ÒòÎªÊÇÖ¸Ïòi£¬ËùÒÔ¿ÉÒÔĞŞ¸ÄiµÄÖµ
+    // åˆ›å»ºæŒ‡é’ˆæŒ‡å‘i
+    int *adder = &i;
+    // æŸ¥çœ‹æ˜¯å¦æŒ‡å‘åœ°å€
+    printf("içš„åœ°å€æ˜¯ï¼š%p\n", &i);
+    printf("adderçš„å€¼æ˜¯ï¼š%p\n", adder);
+    
+    // ä½¿ç”¨æŒ‡é’ˆ,å› ä¸ºæ˜¯æŒ‡å‘iï¼Œæ‰€ä»¥å¯ä»¥ä¿®æ”¹içš„å€¼
     *adder = 5;
-    printf("i = %d, *adder = %d\n",i, *adder);
-    //Í¬ÑùÒòÎªadderÊÇint *ÀàĞÍËùÒÔ°ÑÈ¡µØÖ·ºó°Ñsizeof£¨int)´óĞ¡¸ö×Ö½Ú´æ·ÅµÄÖµ ¼ÓÉÏ 3 ºó¸³Öµ¸øw
+    printf("i = %d, *adder = %d\n", i, *adder);
+    // åŒæ ·å› ä¸ºadderæ˜¯int *ç±»å‹æ‰€ä»¥æŠŠå–åœ°å€åæŠŠsizeofï¼ˆint)å¤§å°ä¸ªå­—èŠ‚å­˜æ”¾çš„å€¼ åŠ ä¸Š 3 åèµ‹å€¼ç»™w
     int w = *adder + 3;
-    printf("w = %d\n",w);
+    printf("w = %d\n", w);
     return 0;
 }

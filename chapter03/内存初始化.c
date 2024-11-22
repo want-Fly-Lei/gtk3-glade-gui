@@ -1,22 +1,25 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
-char ch[20];
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+char chs[20];
+
 int main() {
-    printf("Î´³õÊ¼»¯Êı×éÊ±ºò\n");
+    printf("æœªåˆå§‹åŒ–æ•°ç»„æ—¶å€™\n");
     int i, len;
-    //»ñÈ¡Êı×é³¤¶È
-    len = sizeof(ch) / sizeof(char);
-    //Èç¹ûÊÇ×Ö·û´®¿ÉÒÔÊ¹ÓÃstrlen£¬µ«ÊÇÈç¹û×÷Îª×Ö·ûÊı×é¾ÍËãÁË°É
-    //len = strlen(ch);
-    for(i = 0; i < len; i++) {
-        printf("%d",ch[i]);
+    // è·å–æ•°ç»„é•¿åº¦
+    len = sizeof(chs) / sizeof(char);
+    // å¦‚æœæ˜¯å­—ç¬¦ä¸²å¯ä»¥ä½¿ç”¨strlenï¼Œä½†æ˜¯å¦‚æœä½œä¸ºå­—ç¬¦æ•°ç»„å°±ç®—äº†å§
+    // len = strlen(ch);
+    for (i = 0; i < len; ++i) {
+        printf("%hhd ", chs[i]);
     }
-    printf("\n³õÊ¼»¯Êı×éºó\n");
-    memset(ch,0,len);
-    for(i = 0; i < len; i++) {
-        printf("%d",ch[0]);
+
+    puts("\nåˆå§‹åŒ–æ•°ç»„å");
+    memset(chs, 0, len);
+    for (i = 0; i < len; ++i) {
+        printf("%hhd ", chs[i]);
     }
-    printf("\n");
+    putchar('\n');
     return 0;
 }

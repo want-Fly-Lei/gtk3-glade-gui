@@ -1,27 +1,30 @@
-#include<stdio.h>
+#include <stdio.h>
+
 int main() {
-    int num[] = {1,2,4,7,10};
+    int num[] = {1, 2, 4, 7, 10};
     int len = sizeof(num) / sizeof(int);
     int i;
-    //´Ó½á¹û¿ÉÒÔ¿´³öÊı×éÊÇÁ¬Ğø·Ö²¼µÄµØÖ·
-    for(i = 0; i < len; i++) {
-        printf("%p ",&num[i]);
+    // ä»ç»“æœå¯ä»¥çœ‹å‡ºæ•°ç»„æ˜¯è¿ç»­åˆ†å¸ƒçš„åœ°å€
+    for (i = 0; i < len; ++i) {
+        printf("%p ", &num[i]);
     }
-    printf("\n");
-    //ÎÒÃÇÊ¹ÓÃµÄ×Ö·û´®charÊı×éÒ²ÊÇÍ¬ÑùµÄµÀÀí
+    putchar('\n');
+
+    // æˆ‘ä»¬ä½¿ç”¨çš„å­—ç¬¦ä¸²charæ•°ç»„ä¹Ÿæ˜¯åŒæ ·çš„é“ç†
     char ch[] = "hello, handsome boy";
-    char * cptr = ch;
-    //½øĞĞ±éÀúÊä³ö
-    while(*cptr != '\0') {
-        //Í¨¹ıÖ¸ÕëÒÆ¶¯À´½øĞĞ»ñÈ¡ÄÚÈİ
-        printf("%c",*cptr);
-        //Ö¸ÕëµÄ¡Àn£¬ÊÇ ¡À n * sizeof(¸ÃÀàĞÍÈ¥µôÒ»¸öĞÇºÅ)
+    char *cptr = ch;
+
+    // è¿›è¡Œéå†è¾“å‡º
+    while (*cptr != '\0') {
+        // é€šè¿‡æŒ‡é’ˆç§»åŠ¨æ¥è¿›è¡Œè·å–å†…å®¹
+        printf("%c", *cptr);
+        // æŒ‡é’ˆçš„Â±nï¼Œæ˜¯ Â± n * sizeof(è¯¥ç±»å‹å»æ‰ä¸€ä¸ªæ˜Ÿå·)
         ++cptr;
     }
-    printf("\n");
+    putchar('\n');
 
     cptr = ch;
-    //Ê¹ÓÃ*(Ö¸Õë + n)¿ÉÒÔ»ñÈ¡µ½Êı×éµÚn¸öÖµ
-    printf("%c",*(cptr + 3));
+    // ä½¿ç”¨*(æŒ‡é’ˆ + n)å¯ä»¥è·å–åˆ°æ•°ç»„ç¬¬nä¸ªå€¼
+    printf("%c\n", *(cptr + 3));
     return 0;
 }

@@ -1,15 +1,16 @@
-#include<stdio.h>
-//��Ϊ��ͬ��λ���Ļ�����ָ��Ĵ�С��һ�£�32λ4���ֽڣ�64λ�˸��ֽڣ�
-//���˾���void��õĺô������κ����͵�ָ�붼����ֱ�Ӹ�ֵ�� void ָ�룬���������������ص�ǿ������ת��
-//���ӱ������ǳ��úܶຯ������void * memset(void * dest, int ch, int n);
-//��Ϊvoid*��ʾ��֪�����͵�ָ�룬���������ת�Ʋ���ʹ�ã���ֵ��++��--�ȵȣ��������ڷ��ͱ�������ã�������������
+#include <stdio.h>
+// 因为在同样位数的机器中指针的大小都一致（32位4个字节，64位八个字节）
+// 个人觉得 void 指针最好的好处就是任何类型的指针都可以直接赋值给 void 指针，而无需进行其他相关的强制类型转换
+// 例子比如我们常用很多函数比如 void * memset(void * dest, int ch, int n);
+// 因为 void * 表示不知道类型的指针，所以你必须转换才能使用（赋值，++，--等等），除了在泛型编程中有用，其他就这样吧
+
 int main() {
     int num = 12;
-    void * ptr = &num;
-    printf("voidָ�볤��Ϊ%d\n",sizeof(ptr));
-    //*ptr = 14;//����voidָ�룬������ת������ʹ��
-    int * pp = ptr;
+    void *ptr = &num;
+    printf("void指针长度为%zu\n", sizeof(ptr));
+    // *ptr = 14; //错误，void指针，必须先转换才能使用
+    int *pp = ptr;
     *pp = 20;
-    printf("pp = %d\n",*pp);
+    printf("pp = %d\n", *pp);
     return 0;
 }

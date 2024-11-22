@@ -1,11 +1,12 @@
-#include<stdio.h>
-#include<malloc.h>
-//ÕâÀï°¸ÀýÊÇÆä´Î£¬Ö÷ÒªÊÇÖ±µ½¿ÉÒÔº¯Êý·µ»ØÖ¸ÕëÀàÐÍ£¬´Ó¶øÊµÏÖ£¬º¯Êý·µ»Ø¶à¸öÖµ
-int * revsal(int num) {
-    if(num >= 100 && num <= 999) {
-        //¿ª±Ù¿Õ¼ä
-        int * arr = (int *)malloc(sizeof(int) * 3);
-        for(int i = 0; i < 3; i++) {
+#include <stdio.h>
+#include <malloc.h>
+// è¿™é‡Œæ¡ˆä¾‹æ˜¯å…¶æ¬¡ï¼Œä¸»è¦æ˜¯ç›´åˆ°å¯ä»¥å‡½æ•°è¿”å›žæŒ‡é’ˆç±»åž‹ï¼Œä»Žè€Œå®žçŽ°ï¼Œå‡½æ•°è¿”å›žå¤šä¸ªå€¼
+
+int *reversal(int num) {
+    if (num >= 100 && num <= 999) {
+        // å¼€è¾Ÿç©ºé—´
+        int *arr = (int *) malloc(sizeof(int) * 3);
+        for (int i = 0; i < 3; ++i) {
             arr[i] = num % 10;
             num /= 10;
         }
@@ -16,15 +17,15 @@ int * revsal(int num) {
 
 int main() {
     int num;
-    printf("ÇëÊäÈëÒ»¸öÈýÎ»ÊýµÄÊý×Ö\n");
-    scanf("%d",&num);
-    int *re = revsal(num);
-    if(re != NULL) {
-        printf("%d %d %d\n",*re,*(re + 1), *(re + 2));
-        //ÊÍ·Å¿Õ¼ä
+    printf("è¯·è¾“å…¥ä¸€ä¸ªä¸‰ä½æ•°çš„æ•°å­—\n");
+    scanf("%d", &num);
+    int *re = reversal(num);
+    if (re != NULL) {
+        printf("%d %d %d\n", *re, *(re + 1), *(re + 2));
+        // é‡Šæ”¾ç©ºé—´
         free(re);
     } else {
-        printf("ÄãµÄÊäÈë²»ºÏ·¨\n");
+        puts("ä½ çš„è¾“å…¥ä¸åˆæ³•");
     }
     return 0;
 }
